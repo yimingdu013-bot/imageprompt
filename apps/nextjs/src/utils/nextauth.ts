@@ -8,6 +8,8 @@ import { i18n } from "~/config/i18n-config";
 
 const publicRoute = [
   "/(\\w{2}/)?signin(.*)",
+  "/(\\w{2}/)?login(.*)",
+  "/(\\w{2}/)?register(.*)",
   "/(\\w{2}/)?terms(.*)",
   "/(\\w{2}/)?privacy(.*)",
   "/(\\w{2}/)?docs(.*)",
@@ -52,7 +54,7 @@ const authMiddleware = withAuth(
     const token = await getToken({ req });
     const isAuth = !!token;
     const isAdmin = token?.isAdmin;
-    const isAuthPage = /^\/[a-zA-Z]{2,}\/(login|register|login-clerk)/.test(
+    const isAuthPage = /^\/[a-zA-Z]{2,}\/(login|register|signin)/.test(
       req.nextUrl.pathname,
     );
     const isAuthRoute = req.nextUrl.pathname.startsWith("/api/trpc/");

@@ -5,10 +5,8 @@ export type Generated<T> =
     : ColumnType<T, T | undefined, T>;
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
-import type { SubscriptionPlan, Status } from "./enums";
-
 export type Account = {
-  id: Generated<string>;
+  id: string;
   userId: string;
   type: string;
   provider: string;
@@ -25,7 +23,7 @@ export type Customer = {
   id: Generated<number>;
   authUserId: string;
   name: string | null;
-  plan: SubscriptionPlan | null;
+  plan: string | null;
   stripeCustomerId: string | null;
   stripeSubscriptionId: string | null;
   stripePriceId: string | null;
@@ -38,21 +36,21 @@ export type K8sClusterConfig = {
   name: string;
   location: string;
   authUserId: string;
-  plan: Generated<SubscriptionPlan | null>;
+  plan: Generated<string | null>;
   network: string | null;
   createdAt: Generated<Timestamp>;
   updatedAt: Generated<Timestamp>;
-  status: Generated<Status | null>;
+  status: Generated<string | null>;
   delete: Generated<boolean | null>;
 };
 export type Session = {
-  id: Generated<string>;
+  id: string;
   sessionToken: string;
   userId: string;
   expires: Timestamp;
 };
 export type User = {
-  id: Generated<string>;
+  id: string;
   name: string | null;
   email: string | null;
   emailVerified: Timestamp | null;
