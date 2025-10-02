@@ -100,9 +100,11 @@ export default async function IndexPage({
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-3 rounded-full text-lg font-medium">
-              Try it now !
-            </Button>
+            <Link href="/image-to-prompt">
+              <Button className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-3 rounded-full text-lg font-medium">
+                Try it now !
+              </Button>
+            </Link>
             <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 px-8 py-3 rounded-full text-lg font-medium">
               Tutorials
             </Button>
