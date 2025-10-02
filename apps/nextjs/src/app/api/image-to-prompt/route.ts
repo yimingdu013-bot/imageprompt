@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createCozeApiService } from '@/lib/coze-api';
+import { createCozeApiService } from '~/lib/coze-api';
 
 export async function POST(request: NextRequest) {
   try {

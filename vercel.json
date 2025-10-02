@@ -1,5 +1,20 @@
 {
   "github": {
     "silent": true
-  }
+  },
+  "buildCommand": "cd apps/nextjs && bun run build",
+  "outputDirectory": "apps/nextjs/.next",
+  "installCommand": "bun install",
+  "framework": "nextjs",
+  "functions": {
+    "apps/nextjs/src/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/apps/nextjs/$1"
+    }
+  ]
 }
