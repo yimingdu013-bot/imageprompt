@@ -2,19 +2,13 @@
   "github": {
     "silent": true
   },
-  "buildCommand": "cd apps/nextjs && bun run build",
+  "buildCommand": "bun run turbo run build --filter=@saasfly/nextjs",
   "outputDirectory": "apps/nextjs/.next",
   "installCommand": "bun install",
-  "framework": "nextjs",
+  "framework": null,
   "functions": {
     "apps/nextjs/src/app/api/**/*.ts": {
       "maxDuration": 30
     }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/apps/nextjs/$1"
-    }
-  ]
+  }
 }
